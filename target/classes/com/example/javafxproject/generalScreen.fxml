@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="450.0" style="-fx-background-color: #6bd3d9;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafxproject.controller.GeneralScreenController">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="155.0" layoutY="34.0" text="Select on action">
+         <font>
+            <Font name="Georgia" size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="openTableCreator" alignment="CENTER" contentDisplay="CENTER" layoutX="174.0" layoutY="84.0" mnemonicParsing="false" onAction="#onOpenTableCreator" style="-fx-background-color: #6bd3bf; -fx-border-color: #0d467e;" text="Create table">
+         <font>
+            <Font name="Georgia" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="openFillingTable" alignment="CENTER" contentDisplay="CENTER" layoutX="164.0" layoutY="130.0" mnemonicParsing="false" onAction="#onOpenFillingTable" style="-fx-background-color: #6bd3bf; -fx-border-color: #0d467e;" text="Filling on table">
+         <font>
+            <Font name="Georgia" size="15.0" />
+         </font>
+      </Button>
+      <Label layoutX="378.0" layoutY="374.0" prefHeight="10.0" prefWidth="57.0" text="by sldstrst">
+         <font>
+            <Font name="Georgia" size="10.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -1,0 +1,125 @@
+protected void onCreateButtonClick() throws Exception {
+
+    }
+
+Stage stage = new Stage();
+        // ***** //
+        Button btn = new Button("BUTTON");
+        btn.setMinSize(80, 25);
+
+        String treeStr1 = "Уровень 1";
+        String treeStr2 = "Уровень 2";
+        String treeStr3 = "Уровень 2 - второй пункт";
+        String treeStr4 = "Уровень 3";
+
+        TreeItem<String> itemStr1 = new TreeItem<String>(treeStr1);
+        itemStr1.setExpanded(true);
+        TreeItem<String> itemStr2 = new TreeItem<String>(treeStr2);
+        TreeItem<String> itemStr3 = new TreeItem<String>(treeStr3);
+        TreeItem<String> itemStr4 = new TreeItem<String>(treeStr4);
+
+        itemStr1.getChildren().addAll(itemStr2, itemStr3);
+        itemStr3.getChildren().addAll(itemStr4);
+
+        final TreeView<String> treeView = new TreeView<>(itemStr1);
+
+
+        Slider slider = new Slider(0.0, 20.0, 10.0);
+        slider.setShowTickMarks(true);
+        slider.setShowTickLabels(true);
+        slider.setSnapToTicks(true);
+        slider.setMin(-30.0);
+        slider.setMax(30.0);
+        slider.setMinSize(30.0, 30.0);
+        slider.setMaxSize(130.0, 130.0);
+        slider.setAccessibleText("Text");
+        slider.setOrientation(Orientation.VERTICAL);
+        slider.setBlockIncrement(2.0);
+        slider.setMajorTickUnit(5.0);
+        slider.setMinorTickCount(4);
+        slider.setSnapToTicks(true);
+        slider.setStyle("-fx-border-color: green");
+
+        final Spinner<Integer> spinner = new Spinner<Integer>();
+        final int initialValue = 2000;
+        SpinnerValueFactory<Integer> valueFactory = new SpinnerValueFactory.IntegerSpinnerValueFactory(1950, 2022, initialValue);
+        spinner.setValueFactory(valueFactory);
+        spinner.cancelEdit();
+        spinner.setEditable(true);
+        spinner.setAccessibleHelp("Help");
+        spinner.setCenterShape(true);
+
+        FlowPane flowPane = new FlowPane();
+        flowPane.setOrientation(Orientation.VERTICAL);
+        flowPane.setVgap(10);
+        flowPane.setHgap(10);
+        flowPane.setMinSize(20, 10);
+        flowPane.setMaxSize(800, 600);
+        flowPane.setStyle("-fx-border-color: black");
+        flowPane.getChildren().addAll(treeView, btn, slider, spinner);
+
+        flowPane.setMargin(btn, new Insets(5, 5, 5, 5));
+        flowPane.setMargin(treeView, new Insets(25, 25, 25, 25));
+
+        VBox root = new VBox(flowPane);
+        // ***** //
+
+        WindowCreator mainWindow1 = new WindowCreator(root, stage, "create_table.fxml");
+        mainWindow1.setTitle("второе окошычко");
+        mainWindow1.showStage(stage);
+//        new CreateTable(stage);
+        createTable.setText("Создаём таблицу..");
+
+
+
+
+
+
+
+        //        userNameAttr.setEditable(false);
+        //        userTypeAttr.setEditable(true);
+        //        userPrimKey.setEditable(true);
+                //FILLING IN VARIABLES END
+
+                //ACTIONS ON DROP-DAWN LIST BEGIN
+        //        ObservableList<TypeAttr> typeList = FXCollections.observableArrayList(//
+        //                TypeAttr.values());
+        //        userTypeAttr.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<UserTable, TypeAttr>, ObservableValue<TypeAttr>>() {
+        //            @Override
+        //            public ObservableValue<TypeAttr> call(TableColumn.CellDataFeatures<UserTable, TypeAttr> param) {
+        //                UserTable tables = param.getValue();
+        //                String typeAttrCode = tables.getTypeAttribute();
+        //                TypeAttr type = TypeAttr.getByCode(typeAttrCode);
+        //                return new SimpleObjectProperty<TypeAttr>(type);
+        //            }
+        //        });
+        //
+        //        userTypeAttr.setCellFactory(ComboBoxTableCell.forTableColumn(typeList));
+        //
+        //        userTypeAttr.setOnEditCommit((TableColumn.CellEditEvent<UserTable, TypeAttr> event) -> {
+        //            TablePosition<UserTable, TypeAttr> pos = event.getTablePosition();
+        //
+        //            TypeAttr newType = event.getNewValue();
+        //
+        //            int row = pos.getRow();
+        //            UserTable userTable = event.getTableView().getItems().get(row);
+        //
+        //            userTable.setTypeAttribute(newType.getCode());
+        //        });
+        //        userTypeAttr.setMinWidth(120);
+        //
+        //        table.getColumns().addAll(userNameAttr, userTypeAttr, userPrimKey);
+        //
+        //        UserTable row = new UserTable(nameAttrField.getText(), typeAttrField.getText(), false);
+        //        ObservableList<UserTable> list = FXCollections.observableArrayList(row);
+        ////        table.setItems(list);
+        //
+        //        btnAdd.setOnAction(
+        //                event-> lblAdd.setText("Input: " + nameAttrField.getText()
+        //                + " " + typeAttrField.getText()
+        //                + " " + primaryKeyField.getText())
+        //        );
+        //
+        //        btnAdd.setOnAction(event-> table.setItems(list)
+        //        );
+                //ACTIONS ON DROP-DAWN LIST END
